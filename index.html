@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>家計簿</title>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>Household account book</h1>
+		<h3>自分たちの財布は自分たちで管理しよう</h3>
+	</header>
+	<main>
+		<!-- 月初めに収入を入力する -->
+		<div id="registarMonth">
+			<p class="bigfont">収入</p>
+			<p class="mo_Money">金額</p>
+			<input type="text" type="number" placeholder="金額:0円" id="mo_MoneyInput" name="salary"><br>
+			<button type="button" id="registarSalary" class="buttonSalary" onclick="onRecordHouseMoney()">収入登録</button><br>
+			<p id="mo_Money"></p>
+		</div>
+		<!-- 毎回使った金額をここに記録する -->
+		<div id="speddingMo_Money">
+			<div class="registarSpedding">
+				<div class="speddingTodayMoney">
+					<p class="bigfont">支出</p>
+					<div class="moneyTodayRegistar">
+						<p class="mo_Money">金額</p>
+						<input type="text" type="number" placeholder="金額:0円" id="mo_speddingInput" name="spedding"><br>
+					</div>
+					<div class="moneyTodayDetail">
+						<p class="mo_Detail">内容</p>
+						<input type="text" type="number" placeholder="内容" id="mo_speddingDetail">
+					</div>
+					<button type="button" id="registarSpedding" class="buttonSpedding" onclick="onRecordSpeddingMoney()">支出登録</button><br>
+				</div>
+				
+				<div id="recorddingMoney" class="displayNone">
+					<p>支出記録</p>
+					<ul id="mo_Moneylist"></ul>
+				</div>
+				<p id="lastMoneyNowwing"></p>
+			</div>
+		</div>
+		<!-- 残りの金額をここに入力される -->
+		<div id="balanceMoney" class="displayNone">
+			<p id="balanceMoneyMonth"></p>
+		</div>
+	</main>
+	<footer>
+		<p>
+			<small>Copyright &copy;YUKITSUBOTA.ALL rights reserved.</small>
+		</p>
+	</footer>
+	<script src="mainEvent.js"></script>
+</body>
+</html>
